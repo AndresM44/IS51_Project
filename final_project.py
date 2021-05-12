@@ -39,7 +39,7 @@ except NameError:
 
 BMI = weight / (height/100)**2
 
-print("You BMI is: ", BMI)
+print("Your BMI is: ", BMI)
 
 if BMI <= 18.4:
     print("You are underweight.")
