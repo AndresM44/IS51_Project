@@ -56,8 +56,18 @@ else:
 
 """
 
-try:
+a = " Hello, this is a BMI calculator. It is a measure of body fat based on height and weight that applies to adult men and women and is endorsed by the U.S. Department of Health & Human Services." #brief intro
+b = " This calculator will assess your measurements and output whether you classify as underweight, healthy, overweight, extremely overweight, obese, extremely obese."
+c = " Please input your measurements into the following questions."
+d = a + b + c
+print(d)
+
+
+try: #helps let the user know if they make an invalid input
     height = float(input("Enter your height in CM: "))
+except ValueError: 
+    print("\nThat is not a number.")
+    print("\nPlease don't do this again.")
 except NameError:
     print("\nYou failed to input a number.")
     print("\nPlease don't do this again.")
@@ -65,22 +75,28 @@ except ZeroDivisionError:
     print("\nOne of your inputs was a 0. That's impossible.")
 try:
     weight = float(input("Enter your weight in KG: "))
+except ValueError:
+    print("\nYou did it again...")
 except NameError:
     print("\nYou did it again...")
+    
 
-BMI = weight / (height/100)**2
+BMI = weight / (height/100)**2 #calculation for BMI
 
 print("Your BMI is: ", BMI)
 
 if BMI <= 18.4:
-    print("You are underweight.")
+    print("According to the BMI calculator, you are underweight.")
 elif BMI <= 24.9:
-    print("You are healthy.")
+    print("According to the BMI calculator, you are healthy.")
 elif BMI <= 29.9:
-    print("You are overweight.")
+    print("According to the BMI calculator, you are overweight.")
 elif BMI <= 34.9:
-    print("You are extremely overweight.")
+    print("According to the BMI calculator, you are extremely overweight.")
 elif BMI <= 39.9:
-    print("You are obese.")
+    print("According to the BMI calculator, you are obese.")
 else:
-    print("You are extremely obese.")
+    print("According to the BMI calculator, you are extremely obese.")
+
+thank_you_note = ("Thank you for using this BMI calculator.")
+print(thank_you_note)
